@@ -52,7 +52,7 @@ Make sure you have Python installed on your computer. You can download it from [
 - Click the "Copy to Clipboard" button to copy the generated password to your clipboard.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.
 
 ### Contributing
 If you want to contribute to this project, feel free to open an issue or submit a pull request.
