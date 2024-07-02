@@ -27,7 +27,6 @@ Make sure you have Python installed on your computer. You can download it from [
 2. **Navigate to the project directory:**
 
     ```bash
-    Copy code
     cd strong-password-generator
     ```
 
@@ -42,7 +41,6 @@ Make sure you have Python installed on your computer. You can download it from [
     Simply double-click on the main.py file, or run the following command in your terminal or command prompt:
 
     ```bash
-    Copy code
     python main.py
     ```
 
