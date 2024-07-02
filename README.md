@@ -46,10 +46,10 @@ Make sure you have Python installed on your computer. You can download it from [
 
 2. **Using the Application:**
 
-- Enter the desired length of the password.
-- Select the checkboxes to include uppercase letters, numbers, and symbols.
-- Click the "Generate Password" button to generate a new password.
-- Click the "Copy to Clipboard" button to copy the generated password to your clipboard.
+    - Enter the desired length of the password.
+    - Select the checkboxes to include uppercase letters, numbers, and symbols.
+    - Click the "Generate Password" button to generate a new password.
+    - Click the "Copy to Clipboard" button to copy the generated password to your clipboard.
 
 ## License
 This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.
