@@ -51,8 +51,14 @@ Make sure you have Python installed on your computer. You can download it from [
     - Click the "Generate Password" button to generate a new password.
     - Click the "Copy to Clipboard" button to copy the generated password to your clipboard.
 
+## Purpose
+
+This project was created for me to learn about Python and Tkinter. It serves as a learning tool to understand GUI application development and password generation techniques.
+
 ## License
+
 This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.
 
-### Contributing
+## Contributing
+
 If you want to contribute to this project, feel free to open an issue or submit a pull request.

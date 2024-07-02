@@ -6,6 +6,7 @@ import tkinter as tk
 window = Tk()
 window.title("Strong Password Generator")
 window.geometry("500x400")
+window.iconbitmap("knivzz.ico")
 
 def new_rand():
     while True:
@@ -22,30 +23,53 @@ def new_rand():
 
     while True:
         try:
-            if upper.get() == 1 and numbs.get() == 0 and symbs.get() == 0:
-                for x in range(pw_length):
-                    pw += ''.join(choice(string.ascii_uppercase))
+            if lower.get() == 1 and upper.get() == 0 and numbs.get() == 0 and symbs.get() == 0:
+                pw += ''.join(choice(string.ascii_lowercase) for x in range(pw_length))
                 break
-            elif upper.get() == 1 and numbs.get() == 1 and symbs.get() == 0:
-                pw += ''.join(choice(string.ascii_uppercase + string.digits) for _ in range(pw_length))
+            elif lower.get() == 1 and upper.get() == 1 and numbs.get() == 0 and symbs.get() == 0:
+                pw += ''.join(choice(string.ascii_lowercase + string.ascii_uppercase) for x in range(pw_length))
                 break
-            elif upper.get() == 1 and numbs.get() == 1 and symbs.get() == 1:
-                pw += ''.join(choice(string.ascii_uppercase + string.digits + string.punctuation) for _ in range(pw_length))
+            elif lower.get() == 1 and upper.get() == 1 and numbs.get() == 1 and symbs.get() == 0:
+                pw += ''.join(choice(string.ascii_lowercase + string.ascii_uppercase + string.digits) for x in range(pw_length))
                 break
-            elif upper.get() == 0 and numbs.get() == 1 and symbs.get() == 0:
-                pw += ''.join(choice(string.digits) for _ in range(pw_length))
+            elif lower.get() == 1 and upper.get() == 1 and numbs.get() == 1 and symbs.get() == 1:
+                pw += ''.join(choice(string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation) for x in range(pw_length))
                 break
-            elif upper.get() == 0 and numbs.get() == 1 and symbs.get() == 1:
-                pw += ''.join(choice(string.digits + string.punctuation) for _ in range(pw_length))
+            elif lower.get() == 0 and upper.get() == 1 and numbs.get() == 0 and symbs.get() == 0:
+                pw += ''.join(choice(string.ascii_uppercase) for x in range(pw_length))
                 break
-            elif upper.get() == 0 and numbs.get() == 0 and symbs.get() == 1:
-                pw += ''.join(choice(string.punctuation) for _ in range(pw_length))
+            elif lower.get() == 0 and upper.get() == 1 and numbs.get() == 1 and symbs.get() == 0:
+                pw += ''.join(choice(string.ascii_uppercase + string.digits) for x in range(pw_length))
                 break
-            elif upper.get() == 1 and numbs.get() == 0 and symbs.get() == 1:
-                pw += ''.join(choice(string.ascii_uppercase + string.punctuation) for _ in range(pw_length))
+            elif lower.get() == 0 and upper.get() == 1 and numbs.get() == 1 and symbs.get() == 1:
+                pw += ''.join(choice(string.ascii_uppercase + string.digits + string.punctuation) for x in range(pw_length))
                 break
-            elif upper.get() == 0 and numbs.get() == 0 and symbs.get() == 0:
-                pw += ''.join(choice(string.ascii_letters) for _ in range(pw_length))
+            elif lower.get() == 0 and upper.get() == 0 and numbs.get() == 1 and symbs.get() == 0:
+                pw += ''.join(choice(string.digits) for x in range(pw_length))
+                break
+            elif lower.get() == 0 and upper.get() == 0 and numbs.get() == 1 and symbs.get() == 1:
+                pw += ''.join(choice(string.digits + string.punctuation) for x in range(pw_length))
+                break
+            elif lower.get() == 0 and upper.get() == 0 and numbs.get() == 0 and symbs.get() == 1:
+                pw += ''.join(choice(string.punctuation) for x in range(pw_length))
+                break
+            elif lower.get() == 1 and upper.get() == 0 and numbs.get() == 1 and symbs.get() == 0:
+                pw += ''.join(choice(string.ascii_lowercase + string.digits) for x in range(pw_length))
+                break
+            elif lower.get() == 1 and upper.get() == 0 and numbs.get() == 1 and symbs.get() == 1:
+                pw += ''.join(choice(string.ascii_lowercase + string.digits + string.punctuation) for x in range(pw_length))
+                break
+            elif lower.get() == 1 and upper.get() == 0 and numbs.get() == 0 and symbs.get() == 1:
+                pw += ''.join(choice(string.ascii_lowercase + string.punctuation) for x in range(pw_length))
+                break
+            elif lower.get() == 1 and upper.get() == 1 and numbs.get() == 0 and symbs.get() == 1:
+                pw += ''.join(choice(string.ascii_lowercase + string.ascii_uppercase + string.punctuation) for x in range(pw_length))
+                break
+            elif lower.get() == 0 and upper.get() == 0 and numbs.get() == 0 and symbs.get() == 0:
+                pw_box.insert(0, "Please enter a valid choice")
+                break
+            elif lower.get() == 0 and upper.get() == 1 and numbs.get() == 0 and symbs.get() == 1:
+                pw += ''.join(choice(string.ascii_uppercase + string.punctuation) for x in range(pw_length))
                 break
             else:
                 pw_box.insert(0, "Please enter a valid choice")
@@ -64,9 +88,13 @@ lf.pack(pady=20)
 num_box = Entry(lf, font=("Poppins, 16"), width=25, justify=CENTER)
 num_box.pack(padx=30, pady=20)
 
+lower = tk.IntVar()
 upper = tk.IntVar()
 numbs = tk.IntVar()
 symbs = tk.IntVar()
+
+c4 = Checkbutton(window, text="Lowercase", variable=lower, onvalue=1, offvalue=0, command=new_rand)
+c4.pack()
 
 c1 = Checkbutton(window, text="Uppercase", variable=upper, onvalue=1, offvalue=0, command=new_rand)
 c1.pack()
